@@ -57,6 +57,13 @@ func (c *Client) Append(clusterName, fid string, b []byte) error {
 }
 
 // Cluster load stored cluster by cluster name.
+//
+// Cluster is a wrapper of DefaultClient.Cluster
+func Cluster(name string) (*cluster.Cluster, bool) {
+	return DefaultClient.Cluster(name)
+}
+
+// Cluster load stored cluster by cluster name.
 func (c *Client) Cluster(name string) (*cluster.Cluster, bool) {
 	v, ok := c.clusters.Load(name)
 	if !ok {
