@@ -57,10 +57,11 @@ cluster.UpdateStorageGroup("g1", your_storage_config)
 ```
 初始化完成后，就可以执行上传、下载、删除等操作:
 ```
+// 上传文件到storage组g1,并指定返回文件后缀为jpg
 fid, err := cluster.Upload("g1", "jpg", b)
-...
+// 下载文件
 b, err := cluster.Download("g1/M01/DE/79/CgIG6VuXIoeAbiwbAAAIIRe5FG4412.jpg")
-...
+// 删除文件
 err := cluster.Delete("g1/M01/DE/79/CgIG6VuXIoeAbiwbAAAIIRe5FG4412.jpg")
 ```
 
