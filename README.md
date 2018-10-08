@@ -1,14 +1,19 @@
 # fdfs
 
+![Travis (.org) branch](https://img.shields.io/travis/giantpoplar/fdfs/master.svg)
+
 FDFS is a pure golang client for [FastDFS](https://github.com/happyfish100/fastdfs).
 
 ### Main Features
+
 - 支持多个相互独立的FDFS集群
 - 使用可精确控制连接数的连接池管理Tracker和Storage连接
 - 独立设置Tracker和Storage的配置，支持配置热更新
 
 ### Getting Started
+
 #### 仅有1个FastDFS集群
+
 假设集群Tracker地址为127.0.0.1:22122，仅需简单一步就可完成客户端初始化：
 ```
 err := cluster.Init([]string{"127.0.0.1:22122"}, cluster.TrackerConfig{}, cluster.StorageConfig{})
@@ -57,7 +62,9 @@ b, err := cluster.Download("g1/M01/DE/79/CgIG6VuXIoeAbiwbAAAIIRe5FG4412.jpg")
 ...
 err := cluster.Delete("g1/M01/DE/79/CgIG6VuXIoeAbiwbAAAIIRe5FG4412.jpg")
 ```
+
 #### 有多个独立的FastDFS集群
+
 如果你有两个独立的FastDFS集群, 命名为fdfs_cluster1和fdfs_cluster2，集群1的tracker地址为:10.15.25.46:22122和10.15.25.47:22122，集群2的tracker地址为:10.28.89.12:22122和10.28.89.13:22122，可按如下步骤初始化:
 ```
 c := cluster.New("fdfs_cluster1")
@@ -95,4 +102,5 @@ fdfs.UpdateTracker("fdfs_cluter1", your_tracker_config)
 fdfs.UpdateStorageGroup("fdfs_cluster1", "g1", your_storage_config)
 ```
 ### API
+
 [GoDoc](https://www.godoc.org/github.com/giantpoplar/fdfs)
