@@ -1,5 +1,6 @@
 # fdfs
 
+[![GoDoc](https://godoc.org/github.com/giantpoplar/fdfs?status.png)](https://godoc.org/github.com/giantpoplar/fdfs)
 ![Travis (.org) branch](https://img.shields.io/travis/giantpoplar/fdfs/master.svg)
 
 FDFS is a pure golang client for [FastDFS](https://github.com/happyfish100/fastdfs).
